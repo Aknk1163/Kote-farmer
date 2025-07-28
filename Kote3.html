@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mint Farm - Online Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .product {
+      background-color: white;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+    .price {
+      font-weight: bold;
+      color: #388e3c;
+    }
+    .order-button {
+      background-color: #43a047;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .order-button:hover {
+      background-color: #2e7d32;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2e7d32;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mint Farm - Fresh Herbs Online</h1>
+    <p>Buy fresh Mint and Coriander directly from your local farm</p>
+  </header>
+
+  <section class="products">
+    <div class="product">
+      <img src="mint.jpg" alt="Fresh Mint">
+      <h3>Mint</h3>
+      <p class="price">₹10 per bunch</p>
+      <button class="order-button" onclick="orderViaWhatsApp('Mint', 10)">Order Now</button>
+    </div>
+    <div class="product">
+      <img src="coriander.jpg" alt="Fresh Coriander">
+      <h3>Coriander</h3>
+      <p class="price">₹15 per bunch</p>
+      <button class="order-button" onclick="orderViaWhatsApp('Coriander', 15)">Order Now</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Mint Farm | Fresh from the Soil 🌱
+  </footer>
+
+  <script>
+    function orderViaWhatsApp(product, price) {
+      const phone = '9535310845';
+      const message = `Hi! I want to order ${product} (₹${price} per bunch).`;
+      const url = `https://wa.me/91${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
